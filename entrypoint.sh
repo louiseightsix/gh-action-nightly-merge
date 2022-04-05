@@ -5,6 +5,7 @@ set -e
 echo
 echo "  'Nightly Merge Action' is using the following input:"
 echo "    - stable_branch = '$INPUT_STABLE_BRANCH'"
+echo "    - stable_commit = '$INPUT_STABLE_COMMIT'"
 echo "    - development_branch = '$INPUT_DEVELOPMENT_BRANCH'"
 echo "    - allow_ff = $INPUT_ALLOW_FF"
 echo "    - allow_git_lfs = $INPUT_GIT_LFS"
@@ -46,6 +47,7 @@ set -o xtrace
 
 git fetch origin $INPUT_STABLE_BRANCH
 (git checkout $INPUT_STABLE_BRANCH && git pull)||git checkout -b $INPUT_STABLE_BRANCH origin/$INPUT_STABLE_BRANCH
+git reset --hard $INPUT_STABLE_COMMIT
 
 git fetch origin $INPUT_DEVELOPMENT_BRANCH
 (git checkout $INPUT_DEVELOPMENT_BRANCH && git pull)||git checkout -b $INPUT_DEVELOPMENT_BRANCH origin/$INPUT_DEVELOPMENT_BRANCH
