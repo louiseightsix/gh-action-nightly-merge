@@ -1,5 +1,5 @@
-name: 'Nightly Merge'
-description: 'Automatically merge the stable branch into the development one.'
+name: 'Merge Commit to Branch'
+description: 'Automatically merge a specific commit from stable branch into the development one.'
 author: 'Daniele E. Domenichelli'
 branding:
   icon: 'git-merge'
