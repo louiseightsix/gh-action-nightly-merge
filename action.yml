@@ -9,6 +9,9 @@ inputs:
     description: 'Name of the stable branch'
     required: false
     default: 'master'
+  stable_commit:
+    description: 'Commit on stable branch to merge'
+    required: true   
   development_branch:
     description: 'Name of the development branch'
     required: false
